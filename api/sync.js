@@ -57,10 +57,11 @@ export default async function handler(req, res) {
   connection.execute({
     sqlText: sql,
     complete: async (err, stmt, rows) => {
-      if (err) {
-        console.error("❌ Query error:", err.message);
-        return res.status(500).send("Snowflake query failed");
-      }
+     if (err) {
+      console.error("❌ Snowflake query failed:", err.message);
+      console.error("🧪 Query:", sql);
+      return res.status(500).send("Snowflake query failed");
+    }
 
       const formattedRows = rows.map((row) => ({
         keys: { SubscriberKey: row.SUBSCRIBERKEY },
