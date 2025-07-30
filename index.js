@@ -5,8 +5,8 @@ const snowflake = require("snowflake-sdk");
 
 const app = express();
 const port = process.env.PORT || 3000;
-
-// === Initialize Snowflake Connection ===
+ 
+// === Initialize Snowflake Connection == =
 const connection = snowflake.createConnection({
   account: process.env.SNOWFLAKE_ACCOUNT,
   username: process.env.SNOWFLAKE_USERNAME,
