@@ -52,7 +52,7 @@ export default async function handler(req, res) {
 
   initSnowflakeConnection();
 
-  const sql = `SELECT SubscriberKey, Email, FirstName, LastName FROM ${process.env.SNOWFLAKE_DATABASE}.${process.env.SNOWFLAKE_SCHEMA}.SUBSCRIBERS LIMIT 5`;
+  const sql = `SELECT SUBSCRIBERKEY, EMAIL, FIRSTNAME, LASTNAME FROM ${process.env.SNOWFLAKE_DATABASE}.${process.env.SNOWFLAKE_SCHEMA}.SUBSCRIBERS LIMIT 5`;
 
   connection.execute({
     sqlText: sql,
